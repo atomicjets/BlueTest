@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/ricardo/ionicApps/BlueTest/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="302e1c7077e73b3d345903715363c59980ade359">
+        <dex dex="/home/ricardo/ionicApps/BlueTest/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_df54058e3375b852579caa6abfd1dbb62a1e66b5.jar" />
+    </item>
+
+</items>

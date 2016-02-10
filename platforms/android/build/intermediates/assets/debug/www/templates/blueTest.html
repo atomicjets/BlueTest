@@ -1,0 +1,19 @@
+<ion-view title="BlueTest">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+	  <li ng-repeat = "device in devices">
+		<div class="list card">
+		  <div class="item item-divider">{{device.name}}</div>
+		  <div class="item item-body">{{device.address}}</div>
+		</div>
+
+	  </li>
+        <button class="button button-stable button-block " ng-click="initialize()">Initialize</button>
+        <button class="button button-stable button-block " ng-click="enable()">Enable</button>
+        <button class="button button-stable button-block " ng-click="startScan()">Scan</button>
+        <button class="button button-stable button-block " ng-click="stopScan()">Stop Scan</button>
+        <button class="button button-stable button-block " ng-click="disable()">Disable</button>
+	<ion-list ng-repeat = "error in errors_list track by $index">
+	  <ion-item>{{error}}</ion-item>
+	</ion-list>
+    </ion-content>
+</ion-view>
