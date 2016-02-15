@@ -31,6 +31,10 @@
                         {
                             "xml": "<feature name=\"BluetoothLePlugin\"><param name=\"android-package\" value=\"com.randdusing.bluetoothle.BluetoothLePlugin\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Toast\"><param name=\"android-package\" value=\"nl.xservices.plugins.Toast\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -76,6 +80,9 @@
         },
         "cordova-plugin-bluetoothle": {
             "PACKAGE_NAME": "com.ionicframework.bluetest459383"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.ionicframework.bluetest459383"
         }
     },
     "dependent_plugins": {},
@@ -120,6 +127,17 @@
             "clobbers": [
                 "window.bluetoothle"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
+            "id": "cordova-plugin-x-toast.Toast",
+            "clobbers": [
+                "window.plugins.toast"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-x-toast/test/tests.js",
+            "id": "cordova-plugin-x-toast.tests"
         }
     ]
 }

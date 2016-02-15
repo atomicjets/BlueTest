@@ -27,6 +27,9 @@
         },
         "cordova-plugin-bluetoothle": {
             "PACKAGE_NAME": "com.ionicframework.bluetest459383"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.ionicframework.bluetest459383"
         }
     },
     "dependent_plugins": {}

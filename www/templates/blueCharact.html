@@ -1,0 +1,39 @@
+<ion-view tittle = "Service">
+  <ion-content overflow-scroll="true" padding="true" class="has-header">
+	<ion-item>Conected to {{selectedCharacteristic.uuid}}</ion-item>
+
+
+	<ion-list ng-repeat = "error in errors_l track by $index">
+	  <div class="list card">
+		<div class = item item-divider>Mssg</div>
+		<div  class="item item-body">
+		  <p>{{error}}</p>
+		</div>
+	  </div>
+	</ion-list>
+	<button class="button button-stable button-block " ng-click="clean()">Clear</button>
+        <button class="button button-stable button-block " ng-click="read(selectedDevice.address, selectedService.uuid, selectedCharacteristic.uuid)">Read</button>
+		<form class = "list" ng-submit = "write_ble(selectedDevice.address, selectedService.uuid, selectedCharacteristic.uuid)">
+		  <div>
+		  <label class = "item item-input">
+			<input type = "text" placeholder = "Send to BLE" ng-model = "msg.message">
+		  </label>
+		  </div>
+		  <button type="submit" class="button button-small" placeholder = "">Submit</button>
+
+		  <ion-item ng-repeat="descriptor in selectedCharacteristic.descriptors track by descriptor.uuid">
+            {{descriptor.uuid}}
+            <div class="row text-center">
+              <div class="col">
+                <a class="button button-balanced button-small" ng-click="read(selectedDevice.address, selectedService.uuid, selectedCharacteristic.uuid, descriptor.uuid)">Read</a>
+              </div>
+              <div class="col">
+                <a class="button button-balanced button-small" ng-click="writeDescriptor(selectedDevice.address, selectedService.uuid, selectedCharacteristic.uuid, descriptor.uuid, 'hola')">Write</a>
+              </div>
+            </div>
+          </ion-item>
+<!--          <button class="button button-stable button-block " ng-click="write(selectedDevice.address, selectedService.uuid, selectedCharacteristic.uuid, 'hola')">Write</button>-->
+		</form>
+
+  </ion-conente>
+</ion-view>

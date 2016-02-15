@@ -1,0 +1,30 @@
+<ion-view tittle = "Connect">
+  <ion-content overflow-scroll="true" padding="true" class="has-header">
+	<ion-item>Conected to {{selectedDevice.name}}</ion-item>
+	<a ui-sref="blueTest" class="button button-stable button-block ">Tap me!</a>
+		<li ng-repeat = "service in selectedDevice.services track by service.uuid" ng-show = "service.uuid == serial_service_uuid">
+		  <div class="list card">
+			<div class="item item-divider" ui-sref = "blueService({address:selectedDevice.address, service:service.uuid})">Serial Conection Service</div>
+			<div  class="item item-body">
+			  <p>{{service.uuid}}</p>
+			  <p>{{service.characteristics}}</p>
+			</div>
+		  </div>
+		</li>
+
+        <button class="button button-stable button-block " ng-click="connect(selectedDevice.address)">Connect</button>
+        <button class="button button-stable button-block " ng-click="close(selectedDevice.address)">Disconnect</button>
+        <button class="button button-stable button-block " ng-click="descriptors(selectedDevice.address)">Desciptors</button>
+        <button class="button button-stable button-block " ng-click="characteristics(selectedDevice.address, serial_service_uuid)">Characteristics</button>
+        <button class="button button-stable button-block " ng-click="discover(selectedDevice.address)">Discover</button>
+        <button class="button button-stable button-block " ng-click="services(selectedDevice.address)">Services</button>
+
+	<ion-list ng-repeat = "error in errors_l track by $index">
+		<div class = item item-divider>Mssg</div>
+		<div  class="item item-body">
+		  <p>{{error}}</p>
+		</div>
+	  </div>
+	</ion-list>
+  </ion-conente>
+</ion-view>

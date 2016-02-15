@@ -1,0 +1,20 @@
+<ion-view tittle = "Service">
+  <ion-content overflow-scroll="true" padding="true" class="has-header">
+	<ion-item>Conected to {{selectedService.uuid}}</ion-item>
+          <ion-list>
+            <ion-item ng-repeat="characteristic in selectedService.characteristics track by characteristic.uuid" ui-sref = "blueCharact({address:selectedDevice.address, service:selectedService.uuid, characteristic:characteristic.uuid})"><!---->
+              {{characteristic.uuid}}
+            </ion-item>
+          </ion-list>
+
+	<ion-list ng-repeat = "error in errors_l track by $index">
+	  <div class="list card">
+		<div class = item item-divider>Mssg</div>
+		<div  class="item item-body">
+		  <p>{{error}}</p>
+		</div>
+	  </div>
+	</ion-list>
+	<button class="button button-stable button-block " ng-click="clean()">Clear</button>
+  </ion-conente>
+</ion-view>

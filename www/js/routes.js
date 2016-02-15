@@ -15,7 +15,24 @@ angular.module('app.routes', [])
       templateUrl: 'templates/blueTest.html',
       controller: 'blueTestCtrl'
     })
-        
+
+    .state('blueConnect', {
+      url: '/page2:address',
+      templateUrl: 'templates/blueConnect.html',
+      controller: 'blueConnectCtrl'
+    })
+
+    .state('blueService', {
+      url: '/page3:address/page3:service',
+      templateUrl: 'templates/blueService.html',
+      controller: 'blueServiceCtrl'
+    })
+
+    .state('blueCharact', {
+      url: '/page4:address/page4:service/page4:characteristic',
+      templateUrl: 'templates/blueCharact.html',
+      controller: 'blueCharactCtrl'
+    })
       
     ;
 
