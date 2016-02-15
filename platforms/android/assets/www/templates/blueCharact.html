@@ -12,7 +12,7 @@
 	  </div>
 	</ion-list>
 	<button class="button button-stable button-block " ng-click="clean()">Clear</button>
-        <button class="button button-stable button-block " ng-click="read(selectedDevice.address, selectedService.uuid, selectedCharacteristic.uuid)">Read</button>
+        <button class="button button-stable button-block " ng-click="read(selectedDevice.address, selectedService.uuid, selectedCharacteristic.uuid)">Read}</button>
 		<form class = "list" ng-submit = "write_ble(selectedDevice.address, selectedService.uuid, selectedCharacteristic.uuid)">
 		  <div>
 		  <label class = "item item-input">
@@ -25,10 +25,10 @@
             {{descriptor.uuid}}
             <div class="row text-center">
               <div class="col">
-                <a class="button button-balanced button-small" ng-click="read(selectedDevice.address, selectedService.uuid, selectedCharacteristic.uuid, descriptor.uuid)">Read</a>
+                <a class="button button-balanced button-small" ng-click="readDescriptor(selectedDevice.address, selectedService.uuid, selectedCharacteristic.uuid, descriptor.uuid)">Read Descriptor</a>
               </div>
               <div class="col">
-                <a class="button button-balanced button-small" ng-click="writeDescriptor(selectedDevice.address, selectedService.uuid, selectedCharacteristic.uuid, descriptor.uuid, 'hola')">Write</a>
+                <a class="button button-balanced button-small" ng-click="writeDescriptor(selectedDevice.address, selectedService.uuid, selectedCharacteristic.uuid, descriptor.uuid, 'hola')">Write Descriptor</a>
               </div>
             </div>
           </ion-item>

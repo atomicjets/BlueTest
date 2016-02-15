@@ -374,7 +374,7 @@ angular.module('app.controllers', [])
 		});
 
 		$rootScope.read = function(address, service, characteristic) {
-			var params = {address:address, service:service, characteristic:characteristic};
+			var params = {address:address, service:service, characteristic:characteristic, timeout:2000};
 
 			console.log("Read : " + JSON.stringify(params));
 			$scope.errors_l.push("Read : " + JSON.stringify(params));
@@ -440,6 +440,9 @@ angular.module('app.controllers', [])
 			$cordovaBluetoothLE.readDescriptor(params).then(function(obj) {
 				console.log("Read Descriptor Success : " + JSON.stringify(obj));
 				$scope.errors_l.push("Read Descriptor Success : " + JSON.stringify(obj));
+				var bytes = $cordovaBluetoothLE.encodedStringToBytes(obj.value);
+				console.log("Read : " + bytes[0]);
+				$scope.errors_l.push("Read : " + $cordovaBluetoothLE.bytesToString(bytes));
 			}, function(obj) {
 				console.log("Read Descriptor Error : " + JSON.stringify(obj));
 				$scope.errors_l.push("Read Descriptor Error : " + JSON.stringify(obj));
